@@ -1,6 +1,7 @@
-import { compare, hash } from "bcrypt";
-import { Schema, model } from "mongoose";
+// import { compare, hash } from "bcrypt";
+import { Schema, model ,Types} from "mongoose";
 import validator from "validator";
+import bcrypt from "bcryptjs";
 import { roles } from "../Config/roles.mjs";
 const userSchema = Schema(
   {
@@ -25,7 +26,7 @@ const userSchema = Schema(
     password: {
       type: String,
       required: [true, "password is required"],
-      minlength: 5,
+      minlength: 9,
     },
     photo: {
       type: String,
@@ -44,12 +45,15 @@ const userSchema = Schema(
     location: {
       type: {
         type: String,
+        enum: ["Point"],
         // default: "Point",
       },
       coordinates: {
         type: [Number],
       },
     },
+    cars: { type: Types.ObjectId, ref: "Car" },
+    license: { type: Types.ObjectId, ref: "Licence" },
     socketId: { String },
   },
   {
@@ -57,20 +61,18 @@ const userSchema = Schema(
   }
 );
 
-// Check if password matches the user's password
 userSchema.methods.isPasswordMatch = async function (password) {
   const user = this;
-  return compare(password, user.password);
+  return await bcrypt.compare(password, user.password);
 };
 
-// Check if password is modified before the user save
 userSchema.pre("save", async function (next) {
   const user = this;
 
   // && !user.facebookId && !user.googleId && !user.appleId
 
   if (user.isModified("password")) {
-    user.password = await hash(user.password, 8);
+    user.password = await bcrypt.hash(user.password, 8);
   }
   next();
 });

@@ -1,12 +1,7 @@
 import { connect } from 'mongoose';
-// connect('mongodb://127.0.0.1:27017/akhate')
-//   .then(() => console.log('db is Connected'));
-
-
-
   const connectDB = async () => {
     try {
-      await connect("mongodb://127.0.0.1:27017/akhate", {
+      await connect("mongodb://127.0.0.1:27017/Tawasul", {
         serverSelectionTimeoutMS: 5000, 
         socketTimeoutMS: 45000,
       });

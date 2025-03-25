@@ -1,16 +1,20 @@
 import { Router } from "express";
 const Route = Router();
-import { login, logout, register} from "../Controllers/auth.controller.mjs";
 
+import {asyncMiddleware} from "../Middleware/asyncMiddleware.mjs";
+import { login, logout, register,verifyOtpAndRegister} from "../Controllers/auth.controller.mjs";
 
-// login route
-Route.post("/login", login);
+// passenger
+Route.post("/register" ,asyncMiddleware(register));
+Route.post("/verify-otp" ,asyncMiddleware(verifyOtpAndRegister));
+Route.post("/login",asyncMiddleware(login));
+Route.post("/logout" ,asyncMiddleware(logout));
 
-// register route
-Route.post("/register" , register);
-
-// logout route
-Route.post("/logout" , logout);
+// driver
+Route.post("/driver/register" ,asyncMiddleware(register));
+Route.post("/driver/verify-otp" ,asyncMiddleware(verifyOtpAndRegister));
+Route.post("/driver/login",asyncMiddleware(login));
+Route.post("/driver/logout" ,asyncMiddleware(logout));
 
 
 

@@ -1,0 +1,1089 @@
+{
+	"info": {
+		"_postman_id": "7ef9e168-9408-4a97-aaf1-bd978807f3a8",
+		"name": "TawasulApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23342648",
+		"_collection_link": "https://lunar-moon-681733.postman.co/workspace/New-Team-Workspace~e82cd3a5-a56c-43ab-ae40-72f0da74f635/collection/23342648-7ef9e168-9408-4a97-aaf1-bd978807f3a8?action=share&source=collection_link&creator=23342648"
+	},
+	"item": [
+		{
+			"name": "passanger",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"01028892169\",\r\n    \"password\":\"123456789\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"nourpasuony\",\r\n    \"phone\": \"01028892169\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getuser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/user/66b6013028d6a07a82ddd223",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"66b6013028d6a07a82ddd223"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"01022156481\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/reset-Password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"reset-Password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyOtp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"nourpasuony\",\r\n    \"phone\": \"01028892169\",\r\n    \"password\": \"123456789\",\r\n    \"otp\": \"6547\",\r\n    \"role\": \"passenger\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/verify-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzE3YTY1NTU2ZTIwYmU1NjIwOTQ4MmEiLCJyb2xlIjoicGFzc2VuZ2VyIiwiaWF0IjoxNzI5NjAzMTU3LCJleHAiOjE3Mjk2ODk1NTd9.oKMyKM5vMHReznfmcC1bzqdeeXCRZb3GT93VQwGB8no",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "driver",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"01010101010\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"driver\",\r\n    \"phone\":\"01010101010\",\r\n    \"password\":\"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addLocation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"latitude\": 30.7333,\r\n  \"longitude\": 76.7794\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/location/675832ae170f14ce767becad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"location",
+								"675832ae170f14ce767becad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verifyotpDriver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"driver\",\r\n    \"phone\": \"01010101010\",\r\n    \"password\": \"123456789\",\r\n    \"otp\": \"3759\",\r\n    \"role\": \"driver\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/verify-otp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "availabilityStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzMzOTUzODI4LCJleHAiOjE3MzQ1NTg2Mjh9.U4755W_9d-bO38OMNnMmOlDR6KNFPGY_0BydtH4YeLc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // available\r\n    // offline\r\n    \"driverStatus\":\"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/avaliable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"avaliable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HelpAndSupport",
+			"item": [
+				{
+					"name": "getHelpAndSupport",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/help-support",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"help-support"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createHelpAndSupport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionEn\":\"nour\",\r\n    \"questionAr\":\"نور\",\r\n    \"answerEn\":\"mohamed\",\r\n    \"answerAr\":\"محمد\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/dashboard/help-support",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"help-support"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateHelpAndSupport",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionEn\":\"aaaaa\",\r\n    \"questionAr\":\"نور\",\r\n    \"answerEn\":\"mohamed\",\r\n    \"answerAr\":\"محمد\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/dashboard/help-support/671535f2d62f1b4a3a39fbe2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"help-support",
+								"671535f2d62f1b4a3a39fbe2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroyHelpAndSupport",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/dashboard/help-support/671529d10980122ff75fd1c8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"help-support",
+								"671529d10980122ff75fd1c8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LegalAndPolices",
+			"item": [
+				{
+					"name": "getLegalAndPolices",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "lang",
+								"value": "ar",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/legal-polices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"legal-polices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createLegalAndPolices",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titleEn\":\"dad\",\r\n    \"titleAr\":\"نور\",\r\n    \"descriptionEn\":\"mohwadawdamed\",\r\n    \"descriptionAr\":\"محمد\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/dashboard/legal-polices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"legal-polices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLegalAndPolices",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titleEn\":\"aaaaa\",\r\n    \"titleAr\":\"نور\",\r\n    \"descriptionEn\":\"sss\",\r\n    \"descriptionAr\":\"محمد\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/dashboard/legal-polices/671545f5f94da6400f979cbb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"legal-polices",
+								"671545f5f94da6400f979cbb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroyLegalAndPolices",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/dashboard/legal-polices/671545fbf94da6400f979cbd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"dashboard",
+								"legal-polices",
+								"671545fbf94da6400f979cbd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trip",
+			"item": [
+				{
+					"name": "SendTripRequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzI4NTE3MGYxNGNlNzY3YmVjYTUiLCJyb2xlIjoicGFzc2VuZ2VyIiwiaWF0IjoxNzMzOTU3NjI0LCJleHAiOjE3MzQ1NjI0MjR9.z-Wb_lIly-sM2Q_0WesZo_Gu_PoUN6nYQJEIXyi3-LE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startLocation\": {\r\n        \"lat\": 76.7794,\r\n        \"long\": 30.7333\r\n    },\r\n    \"endLocation\": {\r\n        \"lat\": 29.9773,\r\n        \"long\": 31.1325\r\n    },\r\n    \"fare\": 150.75,\r\n    \"comment\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/passenger/trip-Request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"passenger",
+								"trip-Request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StartTrip",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "/api/trip/",
+							"path": [
+								"api",
+								"trip",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EndTripAndCalcFinalPrice",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "/api/trip/",
+							"path": [
+								"api",
+								"trip",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trip-rate",
+			"item": []
+		},
+		{
+			"name": "License",
+			"item": [
+				{
+					"name": "createLicenseForDriver",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "licenseNumber",
+									"value": "ABC123488",
+									"type": "text"
+								},
+								{
+									"key": "issuedDate",
+									"value": "2024-02-09",
+									"type": "text"
+								},
+								{
+									"key": "expiryDate",
+									"value": "2026-02-09",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Nourb/OneDrive/Pictures/9c601db2ad806b6ff0d6dca1c4b01169.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/upload/license",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"upload",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLicenseForDriver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/get/license",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"get",
+								"license"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLicense",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "licenseNumber",
+									"value": "sadasdad5",
+									"type": "text"
+								},
+								{
+									"key": "expiryDate",
+									"value": "2028-02-09",
+									"type": "text"
+								},
+								{
+									"key": "issuedDate",
+									"value": "2026-02-09",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Nourb/OneDrive/Pictures/pexels-alex-amorales-321095-909907.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/update/license/67a8ef61b1fe4b3bc95fd5e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"update",
+								"license",
+								"67a8ef61b1fe4b3bc95fd5e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLicense",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/delete/lincese/67a8ef61b1fe4b3bc95fd5e0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"delete",
+								"lincese",
+								"67a8ef61b1fe4b3bc95fd5e0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllPending",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/get/linceses/pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"get",
+								"linceses",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "makeLicenseApprove",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/approve/lincese/67a8ffa82bd74d43511fa7cb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"approve",
+								"lincese",
+								"67a8ffa82bd74d43511fa7cb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Car",
+			"item": [
+				{
+					"name": "addCar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "model",
+									"value": "Toyota Corolla",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2022",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Black",
+									"type": "text"
+								},
+								{
+									"key": "numCar",
+									"value": "ABC-1234",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Nourb/OneDrive/Pictures/pexels-alex-amorales-321095-909907.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/upload/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"upload",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCar",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "model",
+									"value": "Lancer",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2022",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "Black",
+									"type": "text"
+								},
+								{
+									"key": "numCar",
+									"value": "ABC-1234",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": "/C:/Users/Nourb/OneDrive/Pictures/pexels-alex-conchillos-3888585.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/update/car/67aa460e8eb028c64350795a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"update",
+								"car",
+								"67aa460e8eb028c64350795a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzU4MzJhZTE3MGYxNGNlNzY3YmVjYWQiLCJyb2xlIjoiZHJpdmVyIiwiaWF0IjoxNzM5MDE5MzEyLCJleHAiOjE3Mzk2MjQxMTJ9._OJEEm9jSdUce2AMbi2HEWphSg1cgOVmT-43HPF9CcE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/driver/delete/car/67aa460e8eb028c64350795a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"driver",
+								"delete",
+								"car",
+								"67aa460e8eb028c64350795a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

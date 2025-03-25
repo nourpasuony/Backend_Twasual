@@ -1,62 +1,36 @@
-// import cors from "cors";
-
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
-import { config } from "dotenv";
-
-// to get variables from .env
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-config({ path: join(__dirname, "./.env") });
-
-import "./src/Models/db.js";
-
-import bodyParser from "body-parser";
-
-import { Sock } from "./src/sockets/Socket.mjs";
-import { authRoute, userRoute, requestRoute ,uploadImagesRoute} from "./src/Routes/index.mjs";
-
-// otpRoute
+// import helmet from 'helmet';
 import express from "express";
 const app = express();
+
+import { config } from "dotenv";
+config();
+
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 import { createServer } from "http";
 const httpServer = createServer(app);
 
-import { Server } from "socket.io";
-// import apiLimiter from "./src/Middleware/rateLimiting.mjs";
+import {initializeSocketServer} from "./src/gateway/index.mjs";
+initializeSocketServer(httpServer);
 
-// config middleware cors
-const io = new Server(httpServer, {
-  connectionStateRecovery: { maxDisconnectionDuration: 1000 },
-});
+import "./src/Models/db.js";
+import bodyParser from "body-parser";
+import errorHandler from "./src/Middleware/errorHandler.mjs";
 
-
-
-export default io ;
-
-// this to show the view chatForm file in home path
-// app.use(
-//   cors({
-//     origin: 'http://localhost:5173',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type', 'Authorization'],
-//     credentials: true
-//   })
-// );
-
+// middlewares
 app.use(express.static("public"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
 app.use(bodyParser.json());
-
-// Serve uploaded images
-app.use("/uploads", express.static("./src/uploads"));
-
-// const helmet = require('helmet');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(errorHandler);
 // app.use(helmet());
 
+// main route
 app.get("/", function (req, res) {
   res.json({
     data: "home",
@@ -64,13 +38,11 @@ app.get("/", function (req, res) {
   });
 });
 
-Sock(io);
-
 // routes
-// app.use("/api/v1/" , apiLimiter);
-app.use("/api/v1/", authRoute, userRoute, requestRoute ,uploadImagesRoute);
+import {authRoute,userRoute,driverLicense,helpAndSupport,legalAndPolices,trip, car} from "./src/Routes/index.mjs";
+app.use("/api/v1/",authRoute,userRoute,helpAndSupport,legalAndPolices,trip);
+app.use("/api/v1/driver",driverLicense , car);
 
-//connect with socket.io server
 httpServer.listen(process.env.PORT, () => {
   console.log(`server is run in : http://localhost:${process.env.PORT}`);
 });

@@ -1,3 +1,6 @@
+// this file not use
+
+
 import TripRate from "../Models/trip_rate.mjs";
 import User from "../Models/user.model.mjs";
 
@@ -18,7 +21,6 @@ const passengerSendTripRate = async (req, res) => {
       ...details,
     });
 
-    // requestId,
     // driverId,
     // rate,
     // comment

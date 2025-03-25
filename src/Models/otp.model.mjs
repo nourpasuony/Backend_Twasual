@@ -11,10 +11,12 @@ const otpSchema = Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now,
-    expires: 60 * 5,
+    default: Date.now
   },
 });
+
+
+otpSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
 const Otp = model("Otp", otpSchema);
 export default Otp;

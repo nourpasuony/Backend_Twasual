@@ -1,10 +1,35 @@
 import User from "../Models/user.model.mjs";
 
-// const formatUserData = (userData) => ({
-//   userName: userData.userName,
-//   phone: userData.phone,
-//   photo: userData.photo,
-// });
+const storeUserLocation= async (req, res) => {
+  try {
+    const driverId = req.params.userId;
+    const {latitude, longitude} = req.body;
+    
+    // Find the driver and update location
+    const updatedDriver = await User.findOneAndUpdate(
+      { _id: driverId, role: "driver" },
+      {
+        location: {
+          type: "Point",
+          coordinates: [longitude, latitude],
+        },
+      },
+      { new: true } 
+    );
+
+    if (!updatedDriver) {
+      return res.status(404).json({ success: false, error: "Driver not found or invalid role" });
+    }
+
+    return res.status(200).json({
+      success: true,
+      message: "Driver location updated successfully",
+      data: updatedDriver,
+    });
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+};
 
 const specificUserById = async (req, res) => {
   try {
@@ -48,5 +73,30 @@ const specificUserById = async (req, res) => {
 // };
 
 // userModification
+const driverAvailability = async (req, res) => {
+  try {
+    const { user } = req;
+    const { driverStatus } = req.body;
 
-export { specificUserById };
+    const updatedDriver = await User.findByIdAndUpdate(
+      user._id,
+      { status: driverStatus },
+      { new: true }
+    );
+
+    if (!updatedDriver) {
+      return res.status(404).json({ success: false, msg: "Driver not found" });
+    }
+    const statusMessage =
+      driverStatus === "available"
+        ? "Now, Driver is available"
+        : "Now, Driver is offline";
+
+    return res.status(200).json({ success: true, msg: statusMessage });
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+
+export { storeUserLocation, specificUserById, driverAvailability };
