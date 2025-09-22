@@ -32,9 +32,10 @@
 - **Backend:** Node.js (Express.js)  
 - **Database:** MongoDB (Mongoose ODM)  
 - **Real-time:** Socket.IO  
-- **Auth:** JWT + bcrypt  
-- **Validation:** Joi  
+- **Auth:** JWT + bcrypt + 0auth
+- **Validation:** validator.js 
 - **Deployment:** Docker + Nginx  
+- **integraton:** Mapbox  
 - **Testing:** Jest + Supertest  
 
 ---
