@@ -5,16 +5,6 @@
 
 ---
 
-## 📸 Preview
-
-<div align="center">
-  <img src="docs/images/app-architecture.png" alt="System Architecture" width="600"/>
-  <br/>
-  <i>System Architecture Overview</i>
-</div>
-
----
-
 ## ✨ Features
 
 - **Authentication & Authorization**  
