@@ -36,7 +36,7 @@
 - **Validation:** validator.js 
 - **Deployment:** Docker + Nginx  
 - **integraton:** Mapbox  
-- **Testing:** Jest + Supertest  
+- **Testing:** Jest   
 
 ---
 
