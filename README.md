@@ -53,7 +53,7 @@
 │   └── app.js          # Entry point
 ├── tests/              # Unit & Integration Tests
 ├── docs/               # Documentation & Architecture images
-├── uber-collection.json # Postman Collection
+├── TawasulApi.postman_collection.json # Postman Collection
 ├── .env.example
 ├── package.json
 └── README.md
