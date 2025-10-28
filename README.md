@@ -61,10 +61,10 @@
 
 
 # 1. Clone the repository
-git clone https://github.com/username/uber-clone.git
+git clone https://github.com/username/uber-clone.git](https://github.com/nourpasuony/Backend_Twasual.git
 
 # 2. Navigate
-cd uber-clone
+cd Backend_Twasual
 
 # 3. Install dependencies
 npm install
